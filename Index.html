@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Headtrick na Aposentadoria da Vovó</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, #4b0000, #100000 65%);
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px 12px;
+}
+
+.painel {
+  max-width: 410px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(15, 5, 5, 0.97);
+  border: 2px solid #ff2020;
+  border-radius: 17px;
+  box-shadow: 0 0 25px #ff000055;
+}
+
+.topo {
+  text-align: center;
+  border-bottom: 1px solid #8d1111;
+  padding-bottom: 16px;
+}
+
+.logo {
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  color: #ff3030;
+  font-size: 22px;
+  margin: 5px 0;
+  text-shadow: 0 0 12px #ff000077;
+}
+
+.sub {
+  font-size: 11px;
+  color: #c6aaaa;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #320707;
+  color: #ff5c5c;
+  font-size: 11px;
+}
+
+h3 {
+  color: #ff4949;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 22px;
+}
+
+.botao {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 13px;
+  margin: 9px 0;
+  border: 1px solid #6c2020;
+  border-radius: 9px;
+  background: linear-gradient(100deg, #280808, #180707);
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.botao:hover {
+  background: #551010;
+  border-color: #ff3030;
+  transform: scale(1.015);
+}
+
+.botao.ativo {
+  background: #651111;
+  border-color: #ff4545;
+}
+
+.emoji {
+  margin-right: 9px;
+}
+
+.subopcoes {
+  display: none;
+  margin: 5px 0 12px 12px;
+  padding-left: 10px;
+  border-left: 2px solid #ff2929;
+}
+
+.subopcoes.aberto {
+  display: block;
+}
+
+.subopcoes .botao {
+  background: #160909;
+  font-size: 12px;
+}
+
+.rodape {
+  text-align: center;
+  color: #8c7474;
+  font-size: 10px;
+  margin-top: 22px;
+  line-height: 1.7;
+}
+
+#mensagem {
+  min-height: 42px;
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px dashed #7c2727;
+  border-radius: 8px;
+  text-align: center;
+  color: #ff8585;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="painel">
+
+  <header class="topo">
+    <div class="logo">🔥🎯🔥</div>
+    <h1>HEADTRICK</h1>
+    <div style="font-weight:bold;font-size:12px">
+      NA APOSENTADORIA DA VOVÓ
+    </div>
+    <div class="sub">CENTRAL OFICIAL DA MIRA DA VOVÓ</div>
+    <div class="status">● MODO ZUEIRA ATIVADO</div>
+  </header>
+
+  <h3>🎯 CENTRAL DOS CAPAS</h3>
+
+  <button class="botao" onclick="ativar(this,'3 CAPA NO NOBRU')">
+    <span class="emoji">🔥</span> 3 CAPA NO NOBRU
+  </button>
+
+  <button class="botao" onclick="ativar(this,'HS PESCOÇO DE GIRAFA')">
+    <span class="emoji">🦒</span> HS PESCOÇO DE GIRAFA
+  </button>
+
+  <button class="botao" onclick="alternarFull()">
+    <span class="emoji">💥</span> FULL CAPA
+    <span style="float:right">▼</span>
+  </button>
+
+  <div class="subopcoes" id="opcoesFull">
+    <button class="botao" onclick="ativar(this,'CAPA MARACUJÁ')">
+      🟡 Capa Maracujá
+    </button>
+
+    <button class="botao" onclick="ativar(this,'CAPA FULL LATA AMARELA')">
+      🥫 Capa Full Lata Amarela
+    </button>
+
+    <button class="botao" onclick="ativar(this,'FULL PEITO')">
+      🦺 Full Peito
+    </button>
+  </div>
+
+  <button class="botao" onclick="ativar(this,'CAPA DE VÓ')">
+    <span class="emoji">👵</span> CAPA DE VÓ APOSENTADA
+  </button>
+
+  <button class="botao" onclick="ativar(this,'MIRA MAGNÉTICA DE GELADEIRA')">
+    <span class="emoji">🧲</span> MIRA MAGNÉTICA DE GELADEIRA
+  </button>
+
+  <h3>⚙️ CONFIGURAÇÕES SUSPEITAS</h3>
+
+  <button class="botao" onclick="ativar(this,'NO FOV — SÓ PRA DIZER QUE TEM')">
+    <span class="emoji">👁️</span> NO FOV
+    <span style="color:#ff5c5c;float:right">100% ENFEITE</span>
+  </button>
+
+  <button class="botao" onclick="ativar(this,'SENSIBILIDADE DA BATATA')">
+    <span class="emoji">🥔</span> SENSI DA BATATA
+  </button>
+
+  <button class="botao" onclick="ativar(this,'ANTI CAPA NO JOELHO')">
+    <span class="emoji">🦵</span> ANTI CAPA NO JOELHO
+  </button>
+
+  <button class="botao" onclick="ativar(this,'DESTRAVAR A MIRA DO CONTROLE REMOTO')">
+    <span class="emoji">📺</span> MIRA DO CONTROLE REMOTO
+  </button>
+
+  <button class="botao" onclick="ativar(this,'PING DE 9999 COM WIFI DA VOVÓ')">
+    <span class="emoji">📡</span> PING DA VOVÓ
+  </button>
+
+  <button class="botao" onclick="ativar(this,'MODO CALVO SUPREMO')">
+    <span class="emoji">💀</span> MODO CALVO SUPREMO
+  </button>
+
+  <button class="botao" onclick="ativar(this,'CAPA POR PROCURAÇÃO')">
+    <span class="emoji">📜</span> CAPA POR PROCURAÇÃO
+  </button>
+
+  <button class="botao" onclick="ativar(this,'BOTÃO DO DESESPERO')">
+    <span class="emoji">🚨</span> BOTÃO DO DESESPERO
+  </button>
+
+  <div id="mensagem">
+    👵 A vovó está carregando a mira...
+  </div>
+
+  <button class="botao" onclick="resetar()"
+    style="text-align:center;border-color:#ff3030;margin-top:15px">
+    🔄 RESETAR A ZUEIRA
+  </button>
+
+  <footer class="rodape">
+    HEADTRICK © APOSENTADORIA DA VOVÓ<br>
+    Painel fictício para diversão • Sem integração com o jogo
+  </footer>
+
+</div>
+
+<script>
+function ativar(botao, nome) {
+  document.querySelectorAll('.botao').forEach(b => {
+    b.classList.remove('ativo');
+  });
+
+  botao.classList.add('ativo');
+
+  const frases = [
+    '👵 A vovó autorizou essa configuração!',
+    '🔥 O porteiro dos capas foi notificado!',
+    '💀 Seu adversário pediu férias!',
+    '🥫 Lata amarela selecionada com sucesso!',
+    '😂 Configuração instalada na imaginação!',
+    '🎯 Mira calibrada pelo controle remoto!'
+  ];
+
+  const frase = frases[Math.floor(Math.random() * frases.length)];
+
+  document.getElementById('mensagem').textContent =
+    '✅ ' + nome + ' — ' + frase;
+}
+
+function alternarFull() {
+  const menu = document.getElementById('opcoesFull');
+  menu.classList.toggle('aberto');
+
+  document.getElementById('mensagem').textContent =
+    menu.classList.contains('aberto')
+      ? '💥 Escolha sua modalidade de capa!'
+      : '👵 O menu Full Capa foi fechado.';
+}
+
+function resetar() {
+  document.querySelectorAll('.botao').forEach(b => {
+    b.classList.remove('ativo');
+  });
+
+  document.getElementById('opcoesFull').classList.remove('aberto');
+
+  document.getElementById('mensagem').textContent =
+    '🔄 Tudo resetado! A vovó voltou para o lobby.';
+}
+</script>
+
+</body>
+</html>
