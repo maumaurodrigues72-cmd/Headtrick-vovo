@@ -12,6 +12,15 @@
   box-sizing: border-box;
 }
 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .catch((error) => console.error("Erro no Service Worker:", error));
+  });
+}
+</script>
+  
 body {
   margin: 0;
   min-height: 100vh;
