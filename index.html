@@ -2,154 +2,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100000">
+  <meta name="description" content="Painel fictício de brincadeira com tema vermelho e preto.">
   <link rel="manifest" href="./manifest.json">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Headtrick na Aposentadoria da Vovó</title>
+  <title>Headtrick na Aposentadoria da Vovó</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .catch((error) => console.error("Erro no Service Worker:", error));
-  });
-}
-</script>
-  
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse at top, #4b0000, #100000 65%);
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 20px 12px;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at top, #4b0000, #100000 65%);
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px 12px;
+    }
 
-.painel {
-  max-width: 410px;
-  margin: auto;
-  padding: 20px;
-  background: rgba(15, 5, 5, 0.97);
-  border: 2px solid #ff2020;
-  border-radius: 17px;
-  box-shadow: 0 0 25px #ff000055;
-}
+    .painel {
+      max-width: 410px;
+      margin: auto;
+      padding: 20px;
+      background: rgba(15, 5, 5, 0.97);
+      border: 2px solid #ff2020;
+      border-radius: 17px;
+      box-shadow: 0 0 25px #ff000055;
+    }
 
-.topo {
-  text-align: center;
-  border-bottom: 1px solid #8d1111;
-  padding-bottom: 16px;
-}
+    .topo {
+      text-align: center;
+      border-bottom: 1px solid #8d1111;
+      padding-bottom: 16px;
+    }
 
-.logo {
-  font-size: 35px;
-  margin-bottom: 5px;
-}
+    .logo {
+      font-size: 35px;
+      margin-bottom: 5px;
+    }
 
-h1 {
-  color: #ff3030;
-  font-size: 22px;
-  margin: 5px 0;
-  text-shadow: 0 0 12px #ff000077;
-}
+    h1 {
+      color: #ff3030;
+      font-size: 22px;
+      margin: 5px 0;
+      text-shadow: 0 0 12px #ff000077;
+    }
 
-.sub {
-  font-size: 11px;
-  color: #c6aaaa;
-}
+    .sub {
+      font-size: 11px;
+      color: #c6aaaa;
+    }
 
-.status {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 7px 12px;
-  border-radius: 20px;
-  background: #320707;
-  color: #ff5c5c;
-  font-size: 11px;
-}
+    .status {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 7px 12px;
+      border-radius: 20px;
+      background: #320707;
+      color: #ff5c5c;
+      font-size: 11px;
+    }
 
-h3 {
-  color: #ff4949;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-top: 22px;
-}
+    h3 {
+      color: #ff4949;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-top: 22px;
+    }
 
-.botao {
-  width: 100%;
-  display: block;
-  text-align: left;
-  padding: 13px;
-  margin: 9px 0;
-  border: 1px solid #6c2020;
-  border-radius: 9px;
-  background: linear-gradient(100deg, #280808, #180707);
-  color: white;
-  font-size: 13px;
-  cursor: pointer;
-  transition: .2s;
-}
+    .botao {
+      width: 100%;
+      display: block;
+      text-align: left;
+      padding: 13px;
+      margin: 9px 0;
+      border: 1px solid #6c2020;
+      border-radius: 9px;
+      background: linear-gradient(100deg, #280808, #180707);
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+      transition: .2s;
+    }
 
-.botao:hover {
-  background: #551010;
-  border-color: #ff3030;
-  transform: scale(1.015);
-}
+    .botao:hover {
+      background: #551010;
+      border-color: #ff3030;
+      transform: scale(1.015);
+    }
 
-.botao.ativo {
-  background: #651111;
-  border-color: #ff4545;
-}
+    .botao.ativo {
+      background: #651111;
+      border-color: #ff4545;
+    }
 
-.emoji {
-  margin-right: 9px;
-}
+    .emoji {
+      margin-right: 9px;
+    }
 
-.subopcoes {
-  display: none;
-  margin: 5px 0 12px 12px;
-  padding-left: 10px;
-  border-left: 2px solid #ff2929;
-}
+    .subopcoes {
+      display: none;
+      margin: 5px 0 12px 12px;
+      padding-left: 10px;
+      border-left: 2px solid #ff2929;
+    }
 
-.subopcoes.aberto {
-  display: block;
-}
+    .subopcoes.aberto {
+      display: block;
+    }
 
-.subopcoes .botao {
-  background: #160909;
-  font-size: 12px;
-}
+    .subopcoes .botao {
+      background: #160909;
+      font-size: 12px;
+    }
 
-.rodape {
-  text-align: center;
-  color: #8c7474;
-  font-size: 10px;
-  margin-top: 22px;
-  line-height: 1.7;
-}
+    .rodape {
+      text-align: center;
+      color: #8c7474;
+      font-size: 10px;
+      margin-top: 22px;
+      line-height: 1.7;
+    }
 
-#mensagem {
-  min-height: 42px;
-  margin-top: 15px;
-  padding: 12px;
-  border: 1px dashed #7c2727;
-  border-radius: 8px;
-  text-align: center;
-  color: #ff8585;
-  font-size: 12px;
-}
-</style>
+    #mensagem {
+      min-height: 42px;
+      margin-top: 15px;
+      padding: 12px;
+      border: 1px dashed #7c2727;
+      border-radius: 8px;
+      text-align: center;
+      color: #ff8585;
+      font-size: 12px;
+    }
+  </style>
 </head>
 
 <body>
-
 <div class="painel">
 
   <header class="topo">
@@ -181,11 +172,9 @@ h3 {
     <button class="botao" onclick="ativar(this,'CAPA MARACUJÁ')">
       🟡 Capa Maracujá
     </button>
-
     <button class="botao" onclick="ativar(this,'CAPA FULL LATA AMARELA')">
       🥫 Capa Full Lata Amarela
     </button>
-
     <button class="botao" onclick="ativar(this,'FULL PEITO')">
       🦺 Full Peito
     </button>
@@ -293,7 +282,13 @@ function resetar() {
   document.getElementById('mensagem').textContent =
     '🔄 Tudo resetado! A vovó voltou para o lobby.';
 }
-</script>
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .catch(error => console.error('Erro no Service Worker:', error));
+  });
+}
+</script>
 </body>
 </html>
