@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "HEADTRICK APOSENTADORIA",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Headtrick-vovo",
+  "start_url": "/Headtrick-vovo/",
+  "theme_color": "#ffffff",
+  "id": "headtrick-vovo",
+  "description": "Painel de brincadeira com tema vermelho e preto."
+}
