@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "headtrick-vovo-v3";
+const CACHE_NAME = "headtrick-vovo-v4";
 
 self.addEventListener("install", event => {
   event.waitUntil(
@@ -27,16 +27,16 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
-
-  const url = new URL(event.request.url);
-  if (url.origin !== self.location.origin) return;
+  if (new URL(event.request.url).origin !== self.location.origin) return;
 
   event.respondWith(
     fetch(event.request).catch(async () => {
       const cached = await caches.match(event.request);
-      return cached || (event.request.mode === "navigate"
-        ? caches.match("./index.html")
-        : Response.error());
+      if (cached) return cached;
+      if (event.request.mode === "navigate") {
+        return caches.match("./index.html");
+      }
+      return Response.error();
     })
   );
 });
